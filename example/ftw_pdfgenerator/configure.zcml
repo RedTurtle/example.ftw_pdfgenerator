@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="example.ftw_pdfgenerator">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="ftw.pdfgenerator" />
+
+  <adapter factory=".layout.SessionLayout"
+           provides="ftw.pdfgenerator.interfaces.ILaTeXLayout" />
+
+  <adapter factory=".view.SessionLaTeXView"
+           provides="ftw.pdfgenerator.interfaces.ILaTeXView" />
+  
+</configure>
